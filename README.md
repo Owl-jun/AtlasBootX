@@ -286,28 +286,32 @@ Planned structure:
 
 ```text
 atlasboot/
-|-- core/
-|   |-- boot/
-|   |-- update/
-|   |-- image/
-|   |-- metadata/
-|   `-- rollback/
-|
-|-- interfaces/
-|   |-- IFlash.hpp
-|   `-- IApplicationLauncher.hpp
-|
-|-- ports/
-|   |-- native_sim/
-|   |   |-- NativeSimPort.hpp
-|   |   |-- NativeSimPort.cpp
-|   |   |-- VirtualFlash.hpp
-|   |   `-- VirtualFlash.cpp
-|   `-- template/
-|       |-- TargetPort.hpp
-|       |-- TargetFlash.hpp
-|       |-- TargetApplicationLauncher.hpp
-|       `-- TargetMemoryLayout.hpp
+|-- src/
+|   `-- atlasboot/
+|       |-- core/
+|       |   |-- boot/
+|       |   |-- update/
+|       |   |-- image/
+|       |   |-- metadata/
+|       |   `-- rollback/
+|       |
+|       |-- interfaces/
+|       |   |-- IFlash.hpp
+|       |   `-- IApplicationLauncher.hpp
+|       |
+|       `-- ports/
+|           |-- native_sim/
+|           |   |-- NativeSimPort.hpp
+|           |   |-- NativeSimPort.cpp
+|           |   |-- NativeSimApplicationLauncher.hpp
+|           |   |-- NativeSimMemoryLayout.hpp
+|           |   |-- VirtualFlash.hpp
+|           |   `-- VirtualFlash.cpp
+|           `-- template/
+|               |-- TargetPort.hpp
+|               |-- TargetFlash.hpp
+|               |-- TargetApplicationLauncher.hpp
+|               `-- TargetMemoryLayout.hpp
 |
 |-- examples/
 |   |-- desktop_update_sim/

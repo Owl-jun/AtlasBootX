@@ -7,19 +7,20 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
 add_library(atlasboot
-    core/BootManager.cpp
-    core/Image.cpp
-    core/UpdateManager.cpp
+    src/atlasboot/core/BootManager.cpp
+    src/atlasboot/core/Image.cpp
+    src/atlasboot/core/UpdateManager.cpp
 )
 
 target_include_directories(atlasboot
     PUBLIC
-        ${CMAKE_CURRENT_SOURCE_DIR}
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/atlasboot
 )
 
 add_library(atlasboot_port_native_sim
-    ports/native_sim/NativeSimPort.cpp
-    ports/native_sim/VirtualFlash.cpp
+    src/atlasboot/ports/native_sim/NativeSimApplicationLauncher.cpp
+    src/atlasboot/ports/native_sim/NativeSimPort.cpp
+    src/atlasboot/ports/native_sim/VirtualFlash.cpp
 )
 
 target_link_libraries(atlasboot_port_native_sim PUBLIC atlasboot)
